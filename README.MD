@@ -1,4 +1,5 @@
-# SimpleMoocSpider
+ SimpleMoocSpider
+ ===========
 
 
 -----By Chidori and 乱武-----
@@ -7,7 +8,7 @@
 
 
 
-## 准备工作
+# 准备工作
 
 基本架构为OkHttp3.9.1 + Gson2.8.2， 网页信息通过Fiddler 4分析
 
@@ -34,12 +35,14 @@
 
 ----------
 
-## 一 网页分析
+# 一 网页分析
+###  打开Mooc课程首页
 首先打开http://www.icourse163.org/category/all
 ![image](https://github.com/Superplasma/SimpleMoocSpider/raw/master/images/mooc1.png)
 打开Fiddler 4, 点击Remove All
 ![image](https://github.com/Superplasma/SimpleMoocSpider/raw/master/images/fiddler2.png)
 此时Fiddler应该是空的，回到浏览器，刷新页面；
+### 分析信息
 切回Fiddler界面，此时可以看到加载这个网页的全部信息：
 ![image](https://github.com/Superplasma/SimpleMoocSpider/raw/master/images/fiddler3.png)
 我们希望抓取到的课程信息就在下方的列表中，如“高等数学（二）”“复变函数与积分变换”等；
@@ -56,7 +59,7 @@
 
 
 
-## 二 代码实现
+# 二 代码实现
 
 我们需要做的无非是模拟Http请求，获取服务器返回的数据
 ### 首先是请求获取csrf
