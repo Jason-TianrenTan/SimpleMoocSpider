@@ -122,13 +122,14 @@ String url_ = "http://www.icourse163.org/category/all";
 ```
 ### 解析Json数据，这里使用Google的Gson解析库
 如果没有使用过Gson，通过Maven添加依赖之后，在IDEA点开File-->Settings-->Plugins，在Browse repositories中搜索"GsonFormat"，点击安装（由于我已经安装过了所以右侧没有那个绿色的Install）
-![Alt text](1512318408493.png)
+![image](https://github.com/Superplasma/SimpleMoocSpider/raw/master/images/idea1.png)
+![image](https://github.com/Superplasma/SimpleMoocSpider/raw/master/images/gson_install.png)
 新建一个类，右键-->Generate-->GsonFormat
-![Alt text](./1512318487494.png)
+![image](https://github.com/Superplasma/SimpleMoocSpider/raw/master/images/gson_gen.png)
 将之前的Json全部复制到文本框中，点击"OK"
 ![Alt text](1512318552769.png)
 可以看到，IDEA帮我们自动生成了Json数据对应的类，每个属性对应Json中的属性
-![Alt text](1512318610894.png)
+![image](https://github.com/Superplasma/SimpleMoocSpider/raw/master/images/gson_view.png)
 **这里建议不要改变量名字了，毕竟是一一对应的，如果擅自修改会改出问题**如果必须要修改变量名，请务必上面加上@SerializedName(原Json属性名字)
 
 最后一步解析很简单，直接调用Gson的方法即可，传入之前创建的类
@@ -149,7 +150,7 @@ String url_ = "http://www.icourse163.org/category/all";
     }
 ```
 ## 预览结果
-![Alt text](1512318882567.png)
+![image](https://github.com/Superplasma/SimpleMoocSpider/raw/master/images/preview.png)
 
 
 
