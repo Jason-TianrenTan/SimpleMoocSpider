@@ -36,25 +36,23 @@
 ----------
 
 # 一 网页分析
-###  打开Mooc课程首页
-首先打开http://www.icourse163.org/category/all
+#### 首先打开http://www.icourse163.org/category/all
 ![image](https://github.com/Superplasma/SimpleMoocSpider/raw/master/images/mooc1.png)
-打开Fiddler 4, 点击Remove All
+#### 打开Fiddler 4, 点击Remove All
 ![image](https://github.com/Superplasma/SimpleMoocSpider/raw/master/images/fiddler2.png)
-此时Fiddler应该是空的，回到浏览器，刷新页面；
-### 分析信息
-切回Fiddler界面，此时可以看到加载这个网页的全部信息：
+#### 此时Fiddler应该是空的，回到浏览器，刷新页面；
+#### 切回Fiddler界面，此时可以看到加载这个网页的全部信息：
 ![image](https://github.com/Superplasma/SimpleMoocSpider/raw/master/images/fiddler3.png)
-我们希望抓取到的课程信息就在下方的列表中，如“高等数学（二）”“复变函数与积分变换”等；
+#### 我们希望抓取到的课程信息就在下方的列表中，如“高等数学（二）”“复变函数与积分变换”等；
 ![image](https://github.com/Superplasma/SimpleMoocSpider/raw/master/images/mooc2.png)
-选择右侧列表的"JSON"选项，逐个浏览，我们发现名为“/web/j/courseBean.getMocTermStatisticListByParms.rpc?csrfKey=79741ee1fae643aebe52a8261aa84c16”的数据中含有我们需要的课程信息
+#### 选择右侧列表的"JSON"选项，逐个浏览，我们发现名为“/web/j/courseBean.getMocTermStatisticListByParms.rpc?csrfKey=79741ee1fae643aebe52a8261aa84c16”的数据中含有我们需要的课程信息
 ![image](https://github.com/Superplasma/SimpleMoocSpider/raw/master/images/json.png)
 **不过此时不要急着去做**，网页很重要的东西不能忘了---Cookie；这里我们看到请求该网页需要很多Cookies，并且请求表单需要一个"csrfKey"的参数
 ![image](https://github.com/Superplasma/SimpleMoocSpider/raw/master/images/cookies1.png)
 ![image](https://github.com/Superplasma/SimpleMoocSpider/raw/master/images/webform.png)
-这些信息应该可以在初始网页返回的数据中找到，于是我们回到"/category/all"中：
+#### 这些信息应该可以在初始网页返回的数据中找到，于是我们回到"/category/all"中：
 ![image](https://github.com/Superplasma/SimpleMoocSpider/raw/master/images/cookies2.png)
-果然我们需要的Cookies就在这里了。另外有意思的是，MOOC的csrf竟然和NTESSTUDYSI这条属性是一样的，降低了我们的代码实现难度。于是只需要先请求一次"/category/all"，获取到Cookies和csrfKey，之后带着这些值去请求对应的"/courseBean...." URL即可.
+#### 果然我们需要的Cookies就在这里了。另外有意思的是，MOOC的csrf竟然和NTESSTUDYSI这条属性是一样的，降低了我们的代码实现难度。于是只需要先请求一次"/category/all"，获取到Cookies和csrfKey，之后带着这些值去请求对应的"/courseBean...." URL即可.
 
 
 
