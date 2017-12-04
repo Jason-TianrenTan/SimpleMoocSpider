@@ -1,11 +1,11 @@
-#SimpleMoocSpider
+# SimpleMoocSpider
 
 
 -----By Chidori and 乱武-----
 
 这是一个简易的Java版本MOOC网爬虫，可以爬取首页推荐课程的信息。
 
-[TOC]
+
 
 ## 准备工作
 
@@ -29,6 +29,9 @@
 
 下载地址https://www.telerik.com/fiddler (直接百度也可以)
 打开之后界面大致如下
+```
+![alt](1512316536628.png)
+```
 ![Alt text](1512316536628.png)
 
 
