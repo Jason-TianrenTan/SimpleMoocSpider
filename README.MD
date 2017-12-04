@@ -30,7 +30,7 @@
 下载地址https://www.telerik.com/fiddler (直接百度也可以)
 打开之后界面大致如下
 ```
-![image](https://github.com/Superplasma/SimpleMoocSpider/blob/master/images/fiddler1.png)
+![image](https://github.com/Superplasma/SimpleMoocSpider/raw/master/images/fiddler1.png)
 ```
 
 
